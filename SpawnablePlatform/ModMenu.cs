@@ -10,7 +10,7 @@ namespace SpawnablePlatform
 
         public static MenuScreen GetMenuScreen(MenuScreen modListMenu)
         {
-            MenuRef = new Menu(SpawnablePlatformMod.instance.GetName(), new Element[]
+            MenuRef ??= new Menu(SpawnablePlatformMod.instance.GetName(), new Element[]
             {
                 new KeyBind("Place Platform", SpawnablePlatformMod.GS.KeyBinds.PlacePlatform),
                 new KeyBind("Destroy Platform", SpawnablePlatformMod.GS.KeyBinds.RemovePlatform),
