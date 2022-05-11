@@ -15,7 +15,7 @@
     <ExportDir>bin\Publish</ExportDir>
   </PropertyGroup>
   
-  <Import Project="LocalBuildProperties.props" Condition="Exists('LocalBuildProperties.props')"/>
+  <Import Project="LocalBuildProperties.props" Condition="Exists('LocalBuildProperties.props')" />
   
   <ItemGroup>
     <None Remove="Resources\**\*.png" />
@@ -56,6 +56,9 @@
     </Reference>
     <Reference Include="PlayMaker">
       <HintPath>$(HollowKnightRefs)\PlayMaker.dll</HintPath>
+    </Reference>
+    <Reference Include="Satchel">
+      <HintPath>$(HollowKnightRefs)\Mods\Satchel\Satchel.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>$(HollowKnightRefs)\UnityEngine.dll</HintPath>

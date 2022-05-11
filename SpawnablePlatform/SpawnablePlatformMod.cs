@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 namespace SpawnablePlatform
 {
-    public class SpawnablePlatformMod : Mod, IGlobalSettings<GlobalSettings>, ILocalSettings<LocalSettings>
+    public class SpawnablePlatformMod : Mod, IGlobalSettings<GlobalSettings>, ILocalSettings<LocalSettings>, ICustomMenuMod
     {
         public static GlobalSettings GS = new();
         public GlobalSettings OnSaveGlobal() => GS;
@@ -49,6 +49,11 @@ namespace SpawnablePlatform
             ModHooks.HeroUpdateHook += Listen;
             UnityEngine.SceneManagement.SceneManager.activeSceneChanged += PlacePlatform;
         }
+
+        public bool ToggleButtonInsideMenu => throw new NotImplementedException();
+        public MenuScreen GetMenuScreen(MenuScreen modListMenu, ModToggleDelegates? toggleButtonDelegates)
+            => ModMenu.GetMenuScreen(modListMenu);
+
 
         private static readonly Vector2 platformOffset = new(0, -1.8f);
 
